@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>48hr • Last Checkpoint • PSG Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-red-900 to-blue-800 min-h-screen flex items-center justify-center text-white font-sans">
+
+  <div class="bg-white/10 backdrop-blur-lg p-8 rounded-2xl shadow-xl w-full max-w-md text-center space-y-6">
+    <h1 class="text-2xl font-bold tracking-wide text-yellow-300">✅ Last Checkpoint Reached!</h1>
+    <p class="text-white/80 text-sm">You're one step away from your 48-hour PSG Hub key.</p>
+    <p class="text-white/60 text-xs">Click below to continue to the final key generator.</p>
+
+    <!-- First Button: Show Proceed Area -->
+    <button 
+      onclick="showProceed()"
+      class="w-full py-3 bg-green-400 text-black font-bold rounded-xl hover:bg-green-500 transition">
+      👉 Continue to Final Step
+    </button>
+
+    <!-- Proceed Message + Final Redirect Button -->
+    <div id="proceedBox" class="hidden space-y-4 mt-4">
+      <p class="text-white/70 text-sm italic">
+        Make sure you’re not trying anything funny…<br />
+        <span class="text-red-400 font-bold">Tampering gets you banned.</span>
+      </p>
+      <button 
+        onclick="window.location.href='48hr-generate.html';"
+        class="w-full py-2 bg-blue-600 hover:bg-blue-500 font-bold rounded-md transition">
+        Proceed →
+      </button>
+    </div>
+
+    <p class="text-white/30 text-xs pt-4">PSGHub 48-Hour Key Flow – Checkpoint 2/2</p>
+  </div>
+
+  <script>
+    // Show the Proceed Message and Final Button
+    function showProceed() {
+      document.getElementById('proceedBox').classList.remove('hidden');
+    }
+
+    // --- Bypass Detection ---
+    const bypassSources = [
+      "bypass.city",
+      "bypass.gg",
+      "bypass.systems",
+      "linkvertise.bypass",
+      "lv-bypass",
+      "anythingbypass"
+    ];
+
+    const referrer = document.referrer.toLowerCase();
+
+    for (const source of bypassSources) {
+      if (referrer.includes(source)) {
+        window.location.href = "banned.html";
+        break;
+      }
+    }
+  </script>
+
+</body>
+</html>

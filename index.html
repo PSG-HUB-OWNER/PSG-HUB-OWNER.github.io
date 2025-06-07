@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PSG HUB KEY SYSTEM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-900 to-red-800 flex items-center justify-center min-h-screen text-white font-sans">
+
+  <div class="bg-white/10 backdrop-blur-md p-8 rounded-2xl shadow-2xl w-full max-w-md text-center space-y-8">
+    <h1 class="text-3xl font-bold tracking-widest">PSG HUB KEY SYSTEM</h1>
+
+    <!-- 24 Hour Key Button -->
+    <button onclick="showCheckpoint(1)" class="w-full flex items-center justify-center gap-3 py-3 bg-white text-blue-900 font-semibold rounded-xl hover:bg-gray-100 transition">
+      <i data-feather="key"></i> Get Key (24 Hours)
+    </button>
+
+    <!-- 48 Hour Key Button -->
+    <button onclick="showCheckpoint(2)" class="w-full flex items-center justify-center gap-3 py-3 bg-white text-blue-900 font-semibold rounded-xl hover:bg-gray-100 transition">
+      <i data-feather="clock"></i> Get Key (48 Hours)
+    </button>
+
+    <!-- Shop Button -->
+    <button onclick="openShop()" class="w-full flex items-center justify-center gap-3 py-3 bg-white text-blue-900 font-semibold rounded-xl hover:bg-gray-100 transition">
+      <i data-feather="shopping-cart"></i> Open Shop
+    </button>
+
+    <!-- Message Display -->
+<div id="checkpointMessageBox" class="mt-4 space-y-4 hidden">
+  <p id="checkpointMessage" class="text-sm text-white/80 font-mono"></p>
+  <button 
+    id="proceedBtn"
+    onclick=""
+    class="mx-auto px-4 py-2 bg-blue-700 hover:bg-blue-600 rounded-md font-bold transition hidden">
+    Proceed →
+  </button>
+</div>
+  </div>
+
+<script>
+  feather.replace();
+
+  function showCheckpoint(type) {
+    const msgBox = document.getElementById("checkpointMessageBox");
+    const msg = document.getElementById("checkpointMessage");
+    const proceedBtn = document.getElementById("proceedBtn");
+
+    const checkpoints = type === 1 ? 1 : 2;
+    const redirectLink = type === 1 ? "24hour.html" : "48hour.html";
+
+    msg.textContent = `🚧 You must complete ${checkpoints} checkpoint${checkpoints > 1 ? 's' : ''} to get this key.`;
+    proceedBtn.setAttribute("onclick", `window.location.href='${redirectLink}'`);
+    
+    msgBox.classList.remove("hidden");
+    proceedBtn.classList.remove("hidden");
+  }
+
+  function openShop() {
+    window.location.href = "shop.html";
+  }
+</script>
+</body>
+</html>

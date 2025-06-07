@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Access Denied – PSG Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-black via-red-900 to-black min-h-screen flex items-center justify-center text-white font-sans">
+
+  <div class="bg-red-900/20 border border-red-700 backdrop-blur-md rounded-2xl p-10 max-w-md text-center shadow-2xl">
+    <h1 class="text-4xl font-extrabold text-red-500 mb-4">🚫 BANNED</h1>
+    <p class="text-white/80 mb-6">
+      You have been permanently banned from PSG Hub.
+    </p>
+    <p class="text-red-400 font-semibold mb-4">
+      Reason: <span class="italic">Key bypass attempt or unauthorized access</span>
+    </p>
+    <p class="text-white/60 text-sm leading-relaxed italic">
+  At PSG Hub, we believe in keeping things fair — for everyone.<br />
+  We protect our system, our users, and our values.<br />
+  If you're an outsider trying to break what we built… you've already made a mistake.
+</p>
+    <div class="mt-6 px-4 py-3 bg-black/30 border-l-4 border-red-600 text-sm text-white/70 italic rounded">
+  Maybe next time… think twice before trying to cheat my system.<br />
+  <span class="text-red-500 font-bold">My name is Doue Fan.</span><br />
+  And I don’t let things like that slide.
+</div><div class="mt-8">
+  <p class="text-sm text-white/60 mb-2 italic">Think you deserve another chance?</p>
+  <button onclick="requestUnban()" class="px-4 py-2 bg-red-800 hover:bg-red-700 text-white font-bold rounded-md transition">
+    Request Unban
+  </button>
+</div>
+
+<script>
+  function requestUnban() {
+    const confirmed = confirm("🧠 This doesn’t erase your history. Do you *really* want to request an unban?");
+    if (confirmed) {
+      // Simulate unban appeal request
+      localStorage.removeItem("banned"); // only works if you're using localStorage bans
+      alert("Your unban request was submitted. If accepted, refresh to try again.");
+      // Optionally redirect:
+      // window.location.href = "index.html";
+    }
+  }
+</script>
+
+    <button onclick="location.href='https://google.com'" class="mt-6 px-5 py-2 bg-red-700 hover:bg-red-600 rounded-md font-bold transition">
+      Exit
+    </button>
+  </div>
+
+</body>
+</html>

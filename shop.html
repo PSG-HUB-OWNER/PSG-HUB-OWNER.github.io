@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PSG Hub Shop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-br from-blue-900 to-red-900 min-h-screen text-white font-sans">
+
+  <div class="max-w-5xl mx-auto py-12 px-6">
+    <h1 class="text-4xl font-bold text-center text-yellow-300 mb-6">🛒 PSG Hub Key Store</h1>
+    <p class="text-center text-white/80 mb-10">Choose a key duration and unlock full access instantly.</p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Key Cards -->
+      <script>
+        const keys = [
+          { duration: "24 Hours", price: "0.49", icon: "🕒" },
+          { duration: "48 Hours", price: "0.79", icon: "⏰" },
+          { duration: "1 Week", price: "1.99", icon: "📅" },
+          { duration: "1 Month", price: "4.99", icon: "🗓️" },
+          { duration: "6 Months", price: "11.99", icon: "📆" },
+          { duration: "1 Year", price: "18.99", icon: "🕛" },
+          { duration: "6 Years", price: "24.99", icon: "🔒" },
+          { duration: "Lifetime", price: "29.99", icon: "💎" },
+          { duration: "Become A respected person in discord server", price: "35.99", icon: "👀"}
+        ];
+
+        document.addEventListener("DOMContentLoaded", () => {
+          const grid = document.querySelector(".grid");
+          keys.forEach(k => {
+            const card = document.createElement("div");
+            card.className = "bg-white/10 backdrop-blur-md p-6 rounded-xl shadow-md space-y-4";
+
+            card.innerHTML = `
+              <div class="flex items-center space-x-3">
+                <div class="text-2xl">${k.icon}</div>
+                <h2 class="text-xl font-bold">PSGHub Key – ${k.duration}</h2>
+              </div>
+              <p class="text-white/70 text-sm">Instant access for ${k.duration.toLowerCase()}.</p>
+              <button class="w-full py-2 bg-green-400 text-black font-bold rounded-md hover:bg-green-500 transition">
+                Buy – $${k.price}
+              </button>
+            `;
+            grid.appendChild(card);
+          });
+        });
+      </script>
+
+    </div>
+
+    <!-- Back to main -->
+    <div class="text-center mt-12">
+      <a href="index.html" class="text-white/70 hover:underline">← Back to Key System</a>
+    </div>
+  </div>
+
+</body>
+</html>
